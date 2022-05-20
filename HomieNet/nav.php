@@ -8,9 +8,9 @@
         <div class="navbar-nav">
             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             <a class="nav-link" href="listagem_imoveis.php">Listar Imoveis</a>
-            <a class="nav-link" href="pagina2.php">Pagina 2</a>
-            <a class="nav-link" href="pagina3.php">Pagina 3</a>
-            <a class="nav-link" href="logout.php">Sair</a>
+            <a class="nav-link" href="cadastro_imoveis.php">Cadastro de Imoveis</a>
+            <a class="nav-link" href="#">Pagina 3</a>
+            <a class="nav-link" href="#">Sair</a>
         </div>
         </div>
     </div>

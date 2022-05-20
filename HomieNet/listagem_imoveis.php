@@ -30,7 +30,7 @@ $consulta = $result->fetch_all(MYSQLI_ASSOC);
                     
                     <div class="col-md-3">
                         <div class="card" style="width: 100%; margin-top: 5%">
-                            <img class="card-img-top" src="casa.png" alt="Card image cap" style="width: 30%">
+                            <img class="card-img-top" src="casa.png" alt="Card image cap" style="width: 30% " >
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $imovel["valor_aluguel"];?></h5>
                                 <p class="card-text"><?php echo $imovel["descricao"];?></p>
