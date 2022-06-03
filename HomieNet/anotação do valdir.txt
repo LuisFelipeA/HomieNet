@@ -1,0 +1,10 @@
+
+require_once "config/valida_sessao.php";
+
+
+$sql = "SELECT * FROM usuario WHERE id = {$_SESSION['id']}";
+
+
+
+
+INSERT INTO interesses_has_usuarios(interesse_id, usuario_id) VALUES(1, 1),(2,1),(3,1)

@@ -2,11 +2,20 @@
 
 require_once 'config/conexao.php';
 
-$sql = 'SELECT * FROM imovel';
+if (isset($_GET['imovel'])) {
+    $imovel = $_GET['imovel'];
+}
+
+
+
+$sql = "SELECT * FROM imovel WHERE id = {$imovel}";
 
 $result = mysqli_query($connection, $sql);
 
 $consulta = $result->fetch_all(MYSQLI_ASSOC);
+if (empty($consulta)) {
+    header("Location: listagem_imoveis.php");
+}
 
 ?>
 
@@ -16,7 +25,7 @@ $consulta = $result->fetch_all(MYSQLI_ASSOC);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imóveis</title>
+    <title>Detalhes do imovel</title>
     <link rel='stylesheet' href='assets/css/bootstrap.css'>
     <script src="assets/js/bootstrap.js"></script>
 </head>
@@ -36,7 +45,23 @@ $consulta = $result->fetch_all(MYSQLI_ASSOC);
                                 <h5 class="card-title">R$<?php echo $imovel["valor_aluguel"];?></h5>
                                 <p class="card-text"><?php echo $imovel["descricao"];?></p>
                                 <p class="card-text"><?php echo $imovel["tamanho"];?>m²</p>
-                                <a href="imovel_detalhe.php?imovel=<?=$imovel['id'];?>" class="btn btn-primary">Mais Detalhes</a>
+                                <p class="card-text"><?php echo $imovel["qtd_quartos"];?> quartos</p>
+                                <p class="card-text"><?php echo $imovel["qtd_banheiros"];?> banheiros</p>
+
+
+                                <!-- <p class="card-text"><?php echo $imovel["mobilhado"]; ?></p> -->
+
+                                <p class="card-text">
+                                    <?php 
+                                        if ($imovel["mobilhado"] == 1) {
+                                            echo "Imobilhado";
+                                        } else {
+                                            echo "Não imobilhado";
+                                        } 
+                                    ?>
+                                </p>
+
+
                             </div>
                         </div>   
                     </div>
