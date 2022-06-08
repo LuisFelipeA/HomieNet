@@ -49,17 +49,21 @@ if (empty($consulta)) {
                                 <p class="card-text"><?php echo $imovel["qtd_banheiros"];?> banheiros</p>
 
 
+
                                 <!-- <p class="card-text"><?php echo $imovel["mobilhado"]; ?></p> -->
 
                                 <p class="card-text">
                                     <?php 
                                         if ($imovel["mobilhado"] == 1) {
-                                            echo "Imobilhado";
+                                            echo "Imobilado";
                                         } else {
-                                            echo "Não imobilhado";
+                                            echo "Não imobilado";
                                         } 
                                     ?>
                                 </p>
+
+                                <a href="delete_imovel.php?imovel=<?=$imovel['id'];?>" class="btn btn-primary">Apagar imovel</a>
+                                <a href="editar_imovel.php?imovel=<?=$imovel['id'];?>" class="btn btn-primary">Editar imovel</a>
 
 
                             </div>
